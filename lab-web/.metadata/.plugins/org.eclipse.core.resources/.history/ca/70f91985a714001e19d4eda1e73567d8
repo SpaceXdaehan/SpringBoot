@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+    
+    <main layout:fragment="main">
+        <div>
+            <div>
+                <h1>포스트 목록 페이지</h1>
+            </div>
+            
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>수정시간</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</html>

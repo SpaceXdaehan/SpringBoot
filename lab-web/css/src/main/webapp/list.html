@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS</title>
+        <style>
+            body {
+                background: white;
+                
+            }
+            ul {
+                background-color: black;
+                color: white;
+                list-style: none;
+                padding: 8px;
+            }
+            ul > li {
+                display: inline-block;  
+                /* display: 화면 표시 방식: (inlisn 줄바꿈 없음.) + block(가로/세로/크기 설정)*/
+                width: 64px;
+                text-align: center;
+            }
+            ul > li > a {
+                text-decoration: none;  /* 링크의 밑줄을 제거 */
+                color: white;
+                font-weight: bold;
+            }
+        </style>
+	</head>
+	
+	<body>
+		<h1>List Style</h1>
+        
+        <!-- unordered list -->
+        <ul>
+            <li>
+                <a href="https://www.google.com/">Gooogle</a>
+            </li>
+            
+            <li>
+                <a href="https://www.amazon.com/">Amazon</a>
+            </li>
+            
+            <li>
+                <a href="https://www.apple.com/">Apple</a>
+            </li>
+            
+            <li>
+                <a href="https://www.meta.com/">Meta</a>
+            </li>
+        </ul>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+        <!-- Spring MVC 설정들을 애너테이션(annotation) 기반으로 처리 (서블릿 애너테이션 기반으로 동작한다) -->
+        <mvc:annotation-driven />
+        
+        <!-- Spring MVC에서 dispatcherServlet이 처리하지 않는 정적 요청에 필요한 파일들(image, css, javascript, ...)의 폴더 위치-->
+        <!-- WEB-INF는 서버 바깥에서 접속할 수 없고 webapp은 접속할 수 있어서 webapp 폴더 밑에서 생성함 servlet -->
+        <mvc:resources location="/static" mapping="/**" /> <!-- static폴더 밑에 /**(모든 하위 폴더)를 찾겠다. -->
+        
+        <!-- View Resolver: Spring MVC에서 사용하는 뷰(JSP, ...)를 찾기 위한 설정 -->
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+            <property name="prefix" value="/WRB-INF/views/" />
+            <property name="suffix" value=".jsp" />
+        </bean>
+        
+        <!-- 특정 패키지 아래에 선언된 컴포넌트 애너테이션(@Controller, @RestController)이 선언된 클래스들을 bean으로 관리 하겠다:
+        컨트롤러 클래스들을 작성하는 패키지 이름. -->
+        <context:component-scan base-package="com.itwill.spring1.web" />       
+</beans>

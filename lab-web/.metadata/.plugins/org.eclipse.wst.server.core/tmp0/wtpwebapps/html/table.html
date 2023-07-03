@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML</title>
+        <style>
+        /*CSS*/
+               table, td, th {
+                   border: 1px solid darkgray;
+               }
+        </style>
+	</head>
+	
+	<body>
+		<h1>HTML Table</h1>
+        <!-- 테이블 관련 태그:
+            <table>: 테이블 시작, 끝.
+            <caption>: 테이블 제목. 
+            <thead>: table header.
+            <tbody>: table body.
+            <tfoot>: table footer.
+            <tr>: table row(행).
+            <td>: table data. 셀 데이터.
+            <th>: table cell header. 행 또는 열의 이름을 표시.
+        
+         -->
+         <table border="1">
+            <caption>Front-End 시험 성적</caption>
+            
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>HTML</th>
+                    <th>JAVA</th>
+                    <th>CSS</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                </tr>
+                
+                <tr>
+                    <td>2</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>70</td>
+                </tr>
+                
+                <tr>
+                    <td>3</td>
+                    <td>80</td>
+                    <td>50</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+            
+            <tfoot>           
+                <tr>
+                    <td>Total</td>
+                    <td>300</td>
+                    <td>290</td>
+                    <td>280</td>
+                </tr>
+            </tfoot>
+    </table>
+    
+    
+    <table border="1">
+    <caption>회원 정보</caption>
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>PW</th>
+            <th>Email</th>  
+            <th>Age</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>123</td>
+            <td>222</td>
+            <td>111</td>
+            <td>111</td>
+        </tr>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td>555</td>
+            <td>333</td>
+            <td>677</td>
+            <td>999</td>
+        </tr>
+    </tfoot>
+    
+    <table border="1">
+    <caption>이름 번호</caption>
+    <thead>
+        <tr>
+            <th style="background-color:pink;">name</th>
+            <th colspan="2" style="background-color:red; color: aqua;">number</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>지대한</td>
+            <td>010 1234 1234</td>
+            <td>010 1111 2222</td>
+        </tr>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td>찬희</td>
+            <td>010 5465 4654</td>
+            <td>010 6546 5444</td>
+        </tr>
+    </tfoot>
+    <hr />
+    
+    <table border="1">
+    <caption>이름 번호</caption>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>Daehan</td>
+        </tr>
+    <tbody>
+        <tr>
+            <th rowspan="2">Number</th>
+            <td>010 5090 7015</td>
+        </tr>
+        <tr>
+            <td>010 5090 7015</td>
+        </tr>
+    </tbody>
+    
+   
+    </table>
+    
+   
+	</body>
+</html>

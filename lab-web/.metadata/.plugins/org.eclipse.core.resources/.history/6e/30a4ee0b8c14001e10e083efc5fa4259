@@ -1,0 +1,36 @@
+package com.itwill.spring3.repository.post;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@SpringBootTest
+public class PostRepositoryTest {
+    
+    @Autowired 
+    private PostRepository postRepository;
+    
+//    @Test
+    public void testFindAll() {
+        List<Post> list = postRepository.findByOrderByIdDesc();
+        for (Post p : list) {
+            log.info(p.toString());
+        }
+    }
+    
+    @Test
+    public void testSave() {
+        // DB테이블에 insert할 레코드(엔터티)를 생성:
+        Post entity = Post.builder()
+                .title("JPA 테스트")
+                .content("JPA 라이브러리를 사용한 INSERT")
+                .author("admin")
+                .build();
+    }
+   
+}

@@ -1,0 +1,5 @@
+package com.itwill.spring3.config;
+
+public class SecurityConfig {
+
+}

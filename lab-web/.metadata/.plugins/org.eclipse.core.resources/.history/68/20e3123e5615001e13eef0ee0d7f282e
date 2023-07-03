@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+    
+    <main layout:fragment="main">
+        <div class="my-2 card">
+            <div class="card-header text-center">
+                <h1>포스트 목록 페이지</h1>
+            </div>
+            
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>수정시간</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr th:each="post : ${posts}">
+                            <td th:text="${post.id}"></td>
+                            <td>
+                                <a th:href="@{/post/details?id={id} (id = ${post.id}) }" th:text=${post.title}></a>
+                            </td>
+                            <td th:text="${post.author}"></td>
+                            <td th:text="${ #temporals.format(post.modifiedTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 페이지네이션
+        <div class="container-fluid">
+                <!-- 주요 변수 num / btn.number -->
+                <a th:href="@{/post?num={num}(num=${num}-1)}">뒤로</a>
+            <div th:each="btn : ${btnlist}" class="flex"> 
+                <a th:href="@{/post?num={numbers}(numbers=${btn.number}-1)}"><button th:text="${btn.number}"></button></a>        
+            </div>
+                <a th:href="@{/post?num={num}(num=${num}+1)}">앞으로</a>
+        </div>       
+         -->
+    </main>
+</html>

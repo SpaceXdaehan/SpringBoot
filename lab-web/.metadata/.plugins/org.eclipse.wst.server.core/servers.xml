@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.1 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.1 Server at localhost" name="Tomcat v10.1 Server at localhost" runtime-id="Apache Tomcat v10.1" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="13">
+    <list key="modules" value0="html::org.eclipse.jst.jee.server:html::jst.web::5.0" value1="daehanweb::org.eclipse.jst.jee.server:daehanweb::jst.web::5.0" value2="css::org.eclipse.jst.jee.server:css::jst.web::5.0" value3="javascript::org.eclipse.jst.jee.server:javascript::jst.web::5.0" value4="jsp1::org.eclipse.jst.jee.server:jsp1::jst.web::5.0" value5="jsp2::org.eclipse.jst.jee.server:jsp2::jst.web::5.0" value6="spring11::org.eclipse.jst.jee.server:spring11::jst.web::5.0" value7="spring2::org.eclipse.jst.jee.server:spring2::jst.web::5.0"/>
+  </server>
+</servers>

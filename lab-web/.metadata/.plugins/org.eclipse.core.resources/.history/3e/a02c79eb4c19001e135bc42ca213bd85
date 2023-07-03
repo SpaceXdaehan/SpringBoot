@@ -1,0 +1,27 @@
+package com.itwill.spring3.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Controller
+@RequestMapping("/member")
+public class MemberController {
+    
+    @GetMapping("/signup")
+    public void signUp() {
+        log.info("signUp() GET");
+    }
+    
+    
+    @PostMapping("/member")
+    public String signUp(MemberSignUpDto dto) {
+        log.info("signUp(dto={}) POST", dto);
+        
+        
+    }
+}

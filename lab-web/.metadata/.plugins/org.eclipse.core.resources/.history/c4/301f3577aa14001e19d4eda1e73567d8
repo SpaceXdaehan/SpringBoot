@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+	
+    <main layout:fragment="main">
+        <div class="my-2 card">
+            <div class="card-header text-center">
+                <h1>새 포스트 작성 페이지</h1>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                </form>
+            </div>
+        </div>
+    </main>
+</html>

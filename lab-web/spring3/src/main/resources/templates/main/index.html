@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+    
+    <main layout:fragment="main">
+       <h1 th:text="|현재시간: ${now}|">현재 시간</h1> <!-- 여기서 now는 controller에서 model에 넣어준 왼쪽 값 -->           
+    </main>
+</html>

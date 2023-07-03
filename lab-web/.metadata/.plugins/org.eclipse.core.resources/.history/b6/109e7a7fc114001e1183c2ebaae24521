@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+document.addEventListener('DOMContentLoaded', () => {
+   const modifyForm = document.querySelector('#modifyForm'); 
+   
+   const btnUpdate = document.querySelector('#btnUpdate');
+   const btnDelete = document.querySelector('#btnDelete');
+   btnDelete.addEventListener('click', (e) => {
+      alert("삭제"); 
+   });
+});

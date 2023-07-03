@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript 1</title>
+        <style>
+            div {
+                border: 2px solid gray;
+                margin: 8px;
+                padding: 8px;
+            }
+        </style>
+	</head>
+        <h1>자바스크립트 소개</h1>
+        
+        <h2>JS는 HTML element의 컨텐트를 변경할 수 있다.</h2>
+        <div id="box1" onclick="changeContent()"> 
+            여기는 box1입니다.
+        </div>
+        
+        <h2>JS는 HTML element의 속성 (attribute)을 변경할 수 있다.</h2>
+        <div id="box2" onclick="changeStyle()">
+            여기는 box2입니다.
+        </div>
+        
+        <script>
+        function changeContent() {
+			const box1 = document.getElementById('box1');
+			box1.innerHTML = 'Hi <strong>JavaScript</strong>';
+		}
+        
+        let toggle = true;
+        function changeStyle() {
+        	const box2 = document.getElementById('box2');
+        	
+        	if(toggle) {       	
+    			box2.style.backgroundColor = 'crimson';
+    			box2.style.color = 'white';
+    			box2.style.fontSize = '200%';
+    			toggle = false;
+        	} else {
+        		box2.style.backgroundColor = 'white';
+        		box2.style.color = 'black';
+        		box2.style.fontSize = '100%';
+        		toggle = true;
+        	} 
+			
+		}
+        </script>        
+	<body>
+		
+	</body>
+</html>

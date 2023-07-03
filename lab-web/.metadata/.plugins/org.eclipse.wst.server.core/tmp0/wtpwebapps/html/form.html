@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML</title>
+	</head>
+	
+	<body>
+		  <h1>HTML Form</h1>
+          <!-- 브라우저(클라이언트)에서 사용자의 입력을 받아서, 입력 내용을 서버로 전송하는 방법:
+          1. <from> 태그 안에서 필요한 입력 요소(input element)들을 작성. 
+          2. <from> 태그의 submit 버튼을 클릭하면 입력 요소들에 입력한 내용들이 서버로 전송.
+          
+          전송 방식(method 속성):
+          1. GET 방식: from의 기본 전송 방식. method 속성을 설정하지 않으면 기본 방식은 GET방식이다.
+             - 클라이언트가 보내는 데이터가 요청 주소의 질의 문자열(query string)에 포함되는 방식.
+             - 요청 주소(request URL)의 형식: 
+               프로토콜(http)://서버주소[:포트번호]/경로?질의문자열
+               (예) http://localhost:8081/html/result.html?q=value
+             - 요청 주소에서 경로와 질의 문자열은 ?로 구분.
+             - 질의 문자열의 형식: param1=value1&param2=value2
+             - 질의 문자열에서 요청 파라미터들은(파라미터와 파라미터) &로 구분함.
+             
+          2. POST 방식: 클라이언트가 보내는 데이터가 요청 주소에 노출되지 않고,
+          요청 패킷의 몸체(body)에 포함되서 전송되는 방식.
+             - form의 기본 전송 방식이 아니기 때문에, method의 속성 값을 "post"라고 설정.
+             - GET 방식은 요청 파라미터들을 URL에 포함시키는 방식이기 때문에, 전송되는 데이터의 크기가 제한이 있다.
+             - POST 방식은 전송 데이터의 크기 제한이 없음. 
+        
+          -->
+          
+          <h2>GET 방식 전송</h2>          
+          <form method="get" action="result.html">
+               <input type="    text" name="query" />
+               <input type="submit" value="검색"/>
+          </form>
+          <hr />
+          
+         <h3>Google을 통해 검색할 내용</h3>
+          <form method="get" action="https://www.google.com/search">
+               <input type="text" name="q" />
+               <input type="submit" value="검색"/>
+          <hr />
+          
+          <h2>POST 방식 전송</h2>
+          </form>
+          <form method="post" action="result.html">
+                <input type="text" name="id" placeholder="아이디"/>
+                <input type="password" name="pwd" placeholder="비밀번호"/>
+                <input type="submit" value="로그인"/>
+          </form>
+          <hr />
+          
+          <h2>여러가지 입력 타입들</h2>
+          
+          <form action="result.html"> <!-- method 속성 값을 설정하지 않으면 기본값은 GET이다. -->
+            <input type="text" name="userid" placeholder="아이디"/>
+            <br />
+            <input type="password" name="pwd" placeholder="비밀번호"/>
+            <br />
+            <input type="number" name="age" placeholder="나이" />
+            <br />
+            <input type="date" name="birthday" />
+            <br />
+            <input type="datetime-local" name="createdTime" />
+            <br />
+            <input type="email" name="email" placeholder="이메일@aaa.com"/>
+            <br />
+            <!-- 라디오버튼 -->
+            <input type="radio" name="receive" value="T" id="rb1"/>
+            <label for="rb1">수신동의</label>
+            <input type="radio" name="receive" value="F" checked id="rb2"/>
+            <label for="rb2">수신거부</label>
+            <br />
+            
+            
+            
+            <!-- 체크박스 버튼 -->
+            <input type="checkbox" name="city" value="1" id="cb1"/>
+            <label for="cb1">뉴욕</label>
+            <input type="checkbox" name="city" value="2" id="cb2"/>
+            <label for="cb2">텍사스</label>
+            <input type="checkbox" name="city" value="3" id="cb3"/>
+            <label for="cb3">실리콘밸리</label>
+            <br />
+            
+            <input type="checkbox" name="remember" id="rmb"/>
+            <label for="rmb" id="touch">로그인 정보 기억</label>
+            <input type="submit" value="로그인"/>
+            
+            <!-- 콤보박스(combo box), 목록 상자(drop-down list), 스피너(spinner) -->
+            <select name="domain">
+                <option value="naver.com">네이버</option>
+                <option value="google.com">구글</option>
+                <option value="meta.com">메타</option>
+                <option value="baidu.com">바이두</option>
+            <input type="submit" value="제출"/>
+            </select>
+            <br />
+            
+            <!-- 여러 줄 입력 상자 -->
+            <textarea rows="3" cols="40" name="memo"></textarea>
+            <br />
+            
+            <input type="reset" /> <!-- 기존 입력 값들을 모두 지움 -->
+            <input type="submit" /> <!-- 입력 값들을 서버로 전송 -->
+            
+            
+          </form>
+   
+   
+   
+   
+   
+   
+   
+         
+	</body>       
+</html>

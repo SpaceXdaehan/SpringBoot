@@ -1,0 +1,5 @@
+package com.itwill.spring3.dto;
+
+public class PostSearchDto {
+
+}

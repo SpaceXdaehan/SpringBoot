@@ -1,0 +1,9 @@
+package com.itwill.spring3.repository.member;
+
+public class Member {
+    private Long id;
+    private String username;
+    private String password;
+    private String email;
+    private Role role;
+}

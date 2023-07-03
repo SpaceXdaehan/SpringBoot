@@ -1,0 +1,24 @@
+package com.itwill.spring3.repository.reply;
+
+import com.itwill.spring3.repository.BaseTimeEntity;
+import com.itwill.spring3.repository.post.Post;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "REPLIES")
+@SequenceGenerator(name = "REPLIES_SEQ_GEN", sequenceName = "REPLIES_SEQ", allocationSize = 1)
+public class Reply extends BaseTimeEntity {
+    
+    @Id
+    private Long id; // Primary key
+    
+    private Post post; // Foreign Key, 관계를 맺고 있는 엔터티.
+    
+    private String replyText; // 댓글 내용
+    
+    private String writer; // 댓글 작성자  
+}

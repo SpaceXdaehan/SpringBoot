@@ -1,0 +1,15 @@
+127.0.0.1 - - [30/May/2023:11:24:32 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:24:33 +0900] "GET /spring2/WEB-INF/classes/com/itwill/spring2/web/HomeController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:24:33 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:24:55 +0900] "GET /spring2/WEB-INF/classes/com/itwill/spring2/web/HomeController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:25:19 +0900] "GET /spring2/ HTTP/1.1" 200 1359
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:47:55 +0900] "GET /spring2/post/list;jsessionid=7C877A8EF35175F4D413A940EC50E54B HTTP/1.1" 200 6618
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:51:09 +0900] "GET /spring2/post/create HTTP/1.1" 200 2643
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:51:11 +0900] "GET /spring2/ HTTP/1.1" 200 1315
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:53:49 +0900] "GET /daehanweb/ HTTP/1.1" 404 821
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:54:03 +0900] "GET /daehanweb/daehan.html HTTP/1.1" 200 4765
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:54:03 +0900] "GET /daehanweb/Images/20201124102548_1544383_710_340.jpg HTTP/1.1" 200 159867
+0:0:0:0:0:0:0:1 - - [30/May/2023:11:54:03 +0900] "GET /daehanweb/Images/mbti.jpg HTTP/1.1" 200 37261
+127.0.0.1 - - [30/May/2023:19:06:36 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [30/May/2023:19:06:37 +0900] "GET /spring2/ HTTP/1.1" 200 1315
+0:0:0:0:0:0:0:1 - - [30/May/2023:19:06:39 +0900] "GET /spring2/post/list HTTP/1.1" 200 6618

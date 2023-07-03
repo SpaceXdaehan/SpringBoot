@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+    
+    
+	<main layout:fragment="main">
+        <div class="my-2 card">
+            <div class="card-header text-center">
+                <h1>포스트 상세 보기 페이지</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div>
+                        <label for="id">번호</label>
+                        <input id="id" th:value="${post.id}" />
+                    </div>
+                    <div>
+                        <label for="title">제목</label>
+                        <input id="title" th:value="${post.title}" />
+                    </div>
+                    <div>
+                        <label for="content">내용</label>
+                        <textarea id="content" th:value="${post.content}" />
+                    </div>
+                    <div>
+                        <label for="author">작성자</label>
+                        <input id="author" th:value="${post.author}" />
+                    </div>
+                    <div>
+                        <label for="createdTime">현재시간</label>
+                        <input id="createdTime" th:value="${#temporals.format(post.createdTime, 'yyyy-MM-dd HH:mm:ss')}" />
+                    </div>
+                    <div>
+                        <label for="modifiedTime">수정시간</label>
+                        <input id="modifiedTime" th:value="${post.modifiedTime}" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</html>

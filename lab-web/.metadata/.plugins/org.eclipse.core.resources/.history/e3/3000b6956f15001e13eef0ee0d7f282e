@@ -1,0 +1,5 @@
+package com.itwill.spring3.repository.post;
+
+public class PostSearchTest {
+
+}

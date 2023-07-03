@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+    <!-- bean definitions here -->
+    <!-- HikariConfig hikariConfig = new HikariConfig(); -->
+    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <!-- hikariConfig.setDriverClassName("...") 메서드 호출 -->
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+        <property name="username" value="scott" />
+        <property name="password" value="tiger"></property>
+    </bean>
+    
+    <!-- HikariDataSource dataSource = new HikariDataSource(hikariConfig)-->
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+        <constructor-arg ref="hikariConfig"/> <!-- 데이터 소스라는 이름의 변수를 선언하고 아규먼트가 있는 코드를 호출 -->
+    </bean>
+    
+    <!-- SqlSessionFactoryBean 객체
+      Data Source(Connection Pool)을 이용해서 SQL문장들을 실행하고 결과 처리를 수행하는 객체.
+    -->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath:/mappers/**/*.xml" />
+    </bean>
+    
+    <!-- MyBatis 프레임워크에서 생성하고 관리하는 bean들을 base-package와 그 하위 패키지에서 검색하겠다! -->
+    <mybatis:scan base-package="com.itwill.spring2.repository"/>
+    
+    <!-- Service 애너테이션이 설정된 객체들을 생성하고 관리. -->
+    <context:component-scan base-package="com.itwill.spring2.service" />
+</beans>

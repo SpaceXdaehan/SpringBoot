@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript 4</title>
+	</head>
+	
+	<body>
+		<h1>JavaScript for 반복문</h1>
+        <div id="result"></div>
+        
+        <script>
+        // div#id element를 찾음.
+        const result = document.getElementById('result');
+        
+        let html = '';  // 구구단 출력 결과를 덧붙일 문자열 변수.
+        for(let n = 1; n < 10; n++) {
+        	html += `2 x ${n} = ${2 * n} <br />`;
+        	// 문자열 템플릿: `문자열 ${변수또는 계산식}`
+        }
+        result.innerHTML = html;        
+        result.innerHTML += '<hr />';   // result.innerHTML = result.innerHTML + '<hr />';
+        
+        html = '';
+        // 구구단 2단 ~ 9단까지를 이어서 출력.
+        for (let n = 2; n < 10; n++) {
+        	for (let y = 1; y < 10; y++) {
+        		html += `${n} x ${y} = ${n * y} <br />`;
+        	}     
+        	html += '--------------------<br />';
+        }
+        result.innerHTML += html;
+        result.innerHTML += '<hr />';
+        
+        // 구구단은 2단은 2x2까지, 3단은 3x3까지, ... 9단은 9x9까지 이어서 출력.        
+        html = '';
+        for (let dan = 2; dan < 10; dan++) {
+            for (let n = 1; n <= dan; n++) {
+                html += `${dan} x ${n} = ${dan * n} <br />`;
+            }
+            html += '-------------------- <br />';
+        }
+        result.innerHTML += html;
+        </script>
+	</body>
+</html>

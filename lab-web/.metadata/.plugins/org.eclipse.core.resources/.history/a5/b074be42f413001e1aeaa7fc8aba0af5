@@ -1,0 +1,28 @@
+package com.itwill.spring3.repository.post;
+
+import com.itwill.spring3.repository.BaseTimeEntity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity // JPA 엔터티 클래스 - 데이터베이스 테이블과 매핑되는 클래스.
+@Table(name = "POSTS") // 엔터티 클래스 이름이 DB 테이블 이름과 다른 경우 테이블 이름을 명시.
+@SequenceGenerator(name = "POSTS_SEQ_GEN", sequenceName = "POSTS_SEQ")
+public class Post extends BaseTimeEntity{
+
+    // field 이름은 db 테이블 컬럼과 똑같이 맞춰야됨.
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "POSTS_SEQ_GEN")
+    private Long id;
+    
+    private String title;
+    
+    private String content;
+    
+    private String author;
+}

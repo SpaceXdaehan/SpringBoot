@@ -1,0 +1,12 @@
+package com.itwill.spring3.repository.post;
+
+import com.itwill.spring3.repository.BaseTimeEntity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity // JPA 엔터티 클래스
+@Table(name = "POSTS") // DB
+public class Post extends BaseTimeEntity{
+
+}

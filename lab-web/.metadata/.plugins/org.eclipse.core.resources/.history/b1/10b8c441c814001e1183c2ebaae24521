@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+document.addEventListener('DOMContentLoaded', () => {
+   const modifyForm = document.querySelector('#modifyForm');
+   const btnUpdate = document.querySelector('#btnUpdate');
+   btnUpdate.addEventListener('click', (e) => {
+        alert("업데이트");
+   });
+   
+   const btnDelete = document.querySelector('#btnDelete');
+   btnDelete.addEventListener('click', (e) => {     
+      const check = confirm('정말 삭제할까요?');
+        if (check) {
+            modifyForm.action = '/delete';
+            modifyForm.method = 'post'; 
+            modifyForm.submit(); 
+        }
+  
+   });
+});

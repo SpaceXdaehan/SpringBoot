@@ -1,0 +1,61 @@
+package com.itwill.spring3.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+@EnableWebSecurity
+@Configuration  // 스프링 컨테이너에서 빈(bean)으로 생성, 관리하고 - 필요한 곳에 의존성을 주입해줌.
+public class SecurityConfig {
+    
+    
+    // Spring Security 5 버전부터 비밀번호는 반드시 암호화를 해야 함.
+    // 비밀번호를 암호화 하지 않으면 HTTP 403(access denied, 접근 거부) 또는
+    // HTTP 500(internal server error, 내부 서버 오류)가 발생함.
+    // 암호화를 하지 않은 비밀번호는 로그인과 로그아웃을 할 수 없음.
+    // 비밀번호 인코더(Password encoder) 객체를 반드시 빈(bean)으로 생성해야 함.(Spring 레거시에서는 xml파일에서 관리를 했음)
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }   // xml에서 bean설정해주는 것과 같음
+    
+    
+    // 로그인할 때 사용할 임시 사용자(메모리에 임시 저장되는 사용자) 생성.
+    @Bean
+    public UserDetailsService inMemoryUserDetailsService() {
+        // 유저에 대한 사용자 상세 정보를 가지고 있는 객체
+        UserDetails user1 = User
+                .withUsername("user1") // 로그인할 때 사용할 사용자 이름
+                .password(passwordEncoder().encode("1111"))      // 로그인할 때 사용할 비밀번호
+                .roles("USER")      // 사용자 권한(USER, ADMIN, ....)
+                .build();   // UserDetails 객체 생성. (builder 패턴)
+        
+        
+        UserDetails user2 = User
+                .withUsername("user2") // 로그인할 때 사용할 사용자 이름
+                .password(passwordEncoder().encode("2222"))      // 로그인할 때 사용할 비밀번호
+                .roles("USER", "ADMIN")      // 사용자 권한(USER, ADMIN, ....)
+                .build();   // UserDetails 객체 생성. (builder 패턴)
+        
+        
+        UserDetails user3 = User
+                .withUsername("user3") // 로그인할 때 사용할 사용자 이름
+                .password(passwordEncoder().encode("3333"))      // 로그인할 때 사용할 비밀번호
+                .roles("ADMIN")      // 사용자 권한(USER, ADMIN, ....)
+                .build();   // UserDetails 객체 생성. (builder 패턴)
+    
+        
+        return new InMemoryUserDetailsManager(user1, user2, user3);
+        
+                
+    }
+    
+    
+    
+}

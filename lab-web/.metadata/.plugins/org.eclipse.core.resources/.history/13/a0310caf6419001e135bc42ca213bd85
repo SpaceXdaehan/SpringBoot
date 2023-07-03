@@ -1,0 +1,5 @@
+package com.itwill.spring3.service;
+
+public class MemberService {
+
+}

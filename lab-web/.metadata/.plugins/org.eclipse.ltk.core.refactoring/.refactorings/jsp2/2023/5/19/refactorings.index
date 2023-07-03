@@ -1,0 +1,21 @@
+1683620492426	Delete element
+1683620515136	Rename type 'Post'
+1683620626309	Delete element
+1683685276973	Move 'HomeCreate.jsp' to 'post'
+1683685286699	Rename resource 'HomeCreate.jsp'
+1683685318117	Delete element
+1683685412417	Delete element
+1683686493945	Move compilation unit
+1683686497829	Delete element
+1683780508589	Rename package 'com.itwill.post.repostory'
+1683786379475	Rename type 'HomePost'
+1683787116640	Rename resource 'post.jsp'
+1683794660231	Delete element
+1683796076020	Rename resource 'read.jsp'
+1683796195185	Rename resource 'detail.jsp'
+1683797182806	Rename resource 'read.jsp'
+1683797363377	Rename type 'TitleRead'
+1683797832707	Rename type 'PostDetail'
+1683854113210	Delete element
+1683860364674	Copy file
+1683860372841	Rename resource 'detail2.jsp'

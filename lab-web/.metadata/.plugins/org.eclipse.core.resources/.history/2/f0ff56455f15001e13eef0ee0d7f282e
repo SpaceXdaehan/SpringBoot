@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+    
+    <main layout:fragment="main">
+        <div class="my-2 card">
+            <div class="card-header text-center">
+                <h1>포스트 목록 페이지</h1>
+            </div>
+            
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>수정시간</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr th:each="post : ${posts}">
+                            <td th:text="${post.id}"></td>
+                            <td>
+                                <a th:href="@{/post/details?id={id} (id = ${post.id}) }" th:text=${post.title}></a>
+                            </td>
+                            <td th:text="${post.author}"></td>
+                            <td th:text="${ #temporals.format(post.modifiedTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 검색 -->
+            <div class="card-footer">
+                <form>
+                    <div class="row">
+                        <div class="col-3">
+                            <select class="form-control">
+                                <option>제목</option>
+                                <option>내용</option>
+                                <option>제목 + 내용</option>
+                                <option>작성자</option>
+                            </select>
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" type="text" placeholder="검색어 입력" />
+                        </div>
+                        <div class="col-1">
+                            <input class="form-control btn btn-outline-dark" type="submit" value="검색" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</html>

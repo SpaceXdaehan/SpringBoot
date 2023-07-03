@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+	
+    <main layout:fragment="main">
+        <div class="my-2 card">
+            <div class="card-header text-center">
+                <h1>새 포스트 작성 페이지</h1>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div>
+                        <label for="title">제목</label>
+                        <input id="title" type="text" name="title" required autofocus />
+                    </div>
+                    <div>
+                        <label for="content">내용</label>
+                        <textarea id="content" name="content" required></textarea>
+                    </div>
+                    <div>
+                        <label for="author">작성자</label>
+                        <input id="author" type="text" name="content" required>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</html>

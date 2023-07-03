@@ -1,0 +1,12 @@
+package com.itwill.spring3.dto;
+
+import lombok.Data;
+
+@Data
+public class PostSearchDto {
+    
+    // Dto는 html name 속성값이랑 같은 이름으로 변수를 선언
+    private String type;
+    private String keyword;
+    
+}

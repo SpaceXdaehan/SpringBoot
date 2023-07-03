@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base_layout}">
+    
+    <main layout:fragment="main">
+        <div class="my-2 card">
+            <div class="card-header text-center">
+                <h1>포스트 상세보기 페이지</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div>
+                        <label class="form-label" for="id">번호</label>
+                        <input class="form-control"
+                            id="id" th:value="${post.id}" readonly />
+                    </div>
+                    <div>
+                        <label class="form-label" for="title">제목</label>
+                        <input class="form-control"
+                            id="title" th:value="${post.title}" readonly />
+                    </div>
+                    <div>
+                        <label class="form-label" for="content">내용</label>
+                        <textarea class="form-control"
+                            id="content" th:text="${post.content}" readonly></textarea>
+                    </div>
+                    <div>
+                        <label class="form-label" for="author">작성자</label>
+                        <input class="form-control" 
+                            id="author" th:value="${post.author}" readonly />
+                    </div>
+                    <div>
+                        <label class="form-label" for="createdTime">작성시간</label>
+                        <input class="form-control" id="createdTime"
+                            th:value="${ #temporals.format(post.createdTime, 'yyyy-MM-dd HH:mm:ss') }" 
+                            readonly />
+                    </div>
+                    <div>
+                        <label class="form-label" for="modifiedTime">수정시간</label>
+                        <input class="form-control" id="modifiedTime"
+                            th:value="${ #temporals.format(post.modifiedTime, 'yyyy-MM-dd HH:mm:ss') }"
+                            readonly />
+                    </div>
+                </form>
+                <div>
+                    <a class="btn btn-outline-primary" th:href="@{ /post/modify?id={id} (id = ${post.id}) }">수정하기</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="my-2 card">
+            <div class="card-header">
+                <span>댓글</span>
+                <span id="replyCount" th:text="${replyCount}">댓글 개수</span>개
+                <button class="btn btn-outline-dark" id="btnToggleReply">보이기</button>
+            </div>
+            
+            <div class="card-body collapse" id="replyToggleDiv">
+                <div class="my-2">
+                    <label class="form-label">나의 댓글</label>
+                    <div>
+                        <textarea class="form-control" id="replyText" placeholder="댓글 내용 입력"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>  
+</html>

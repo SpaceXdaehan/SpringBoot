@@ -1,0 +1,18 @@
+package com.itwill.spring3.repository.member;
+
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@NoArgsConstructor
+@Getter
+@ToString
+@Entity
+public class Member {
+    private Long id;
+    private String username;
+    private String password;
+    private String email;
+    private Role role;
+}

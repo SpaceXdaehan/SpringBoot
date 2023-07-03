@@ -1,0 +1,22 @@
+package com.itwill.spring3.repository.member;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@NoArgsConstructor
+@Getter
+@ToString
+@Entity
+@Table(name = "MEMBERS")
+@SequenceGenerator(name = "MEMBERS_SEQ_GEN", sequenceName = "MEMBERS_SEQ", allocationSize = 1)
+public class Member {
+    private Long id;
+    private String username;
+    private String password;
+    private String email;
+    private Role role;
+}
